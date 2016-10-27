@@ -45,5 +45,10 @@ $(function() {
     $('#laddabild2').on('click', function() {
         laddaBild(dataUri2);
     });    
+    $('#setmaxzoomlevel').on('click', function() {
+        maxvalue = $('maxzoomlevel').val();
+        maxvalue = maxvalue.trim() ? maxvalue : null;
+        openSeadragonViewer.viewport.maxZoomLevel = maxvalue;
+    });    
 
 });
