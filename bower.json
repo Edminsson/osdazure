@@ -1,0 +1,20 @@
+{
+  "name": "osdazure",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Axel Aguilar <abc709@hotmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/Edminsson/osdazure",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "openseadragon": "^2.2.1"
+  }
+}
