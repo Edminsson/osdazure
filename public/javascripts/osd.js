@@ -39,4 +39,11 @@ $(function() {
     var dataUri2 = 'https://iiif.riksarkivet.se/arkis!C0000268_00015/info.json';
     laddaBild(dataUri1);    
 
+    $('#laddabild1').on('click', function() {
+        laddaBild(dataUri1);
+    });
+    $('#laddabild2').on('click', function() {
+        laddaBild(dataUri2);
+    });    
+
 });
