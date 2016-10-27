@@ -1,5 +1,7 @@
 $(function() {
 
+    var imageInfo = {};
+
     var viewer = window.openSeadragonViewer = OpenSeadragon({
         id: 'openseadragon1',
         prefixUrl: 'lib/openseadragon/images/',
