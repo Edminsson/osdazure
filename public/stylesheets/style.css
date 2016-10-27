@@ -6,3 +6,9 @@ body {
 a {
   color: #00B7FF;
 }
+
+.openseadragon {
+    background-color: lightblue;
+    width: 900px;
+    height: 700px;
+}
