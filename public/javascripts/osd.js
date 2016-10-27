@@ -50,5 +50,14 @@ $(function() {
         maxvalue = maxvalue.trim() ? maxvalue : null;
         openSeadragonViewer.viewport.maxZoomLevel = maxvalue;
     });    
+    $('#zoomin').on('click', function() {
+        try {
+            var zoom = openSeadragonViewer.viewport.getZoom(true);
+            openSeadragonViewer.viewport.zoomTo(zoom * 2);
+        }
+        catch(err) {
+            alert("Error", err);
+        }
+    });    
 
 });
