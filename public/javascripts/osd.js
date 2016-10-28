@@ -80,13 +80,20 @@ $(function() {
     });
     $('#runGetContext2d').on('click', function() {
         var tid = new Date();
-        try {
-            var canvas = document.createElement( 'canvas' );
-            canvas.getContext('2d');
-            $('#meddelande').text("Canvas getContext('2d') funkar - " + tid.toLocaleTimeString());
-        }
-        catch (err) {
-            alert("Canvas getContext error - " + tid.toLocaleTimeString(), err);
+        var useTryCatch = document.getElementById('checkis').checked;
+        var canvas;
+        if (useTryCatch) {
+            try {
+                canvas = document.createElement( 'canvas' );
+                canvas.getContext('2d');
+                $('#meddelande').text("Canvas getContext('2d') funkar - " + tid.toLocaleTimeString());
+            }
+            catch (err) {
+                alert("Canvas getContext error - " + tid.toLocaleTimeString(), err);
+            }
+        } else {
+            canvas = document.createElement( 'canvas' );
+            canvas.getContext('2d');            
         }
     });
 
