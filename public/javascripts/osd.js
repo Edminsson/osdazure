@@ -18,7 +18,7 @@ $(function() {
             console.log('Bildinfo:(w, h)', imageInfo.width, imageInfo.height);
             laddaTile(data);
         }).fail(function(error) {
-            alert('Det uppstod ett fel');
+            alert('Det uppstod ett fel', error);
         });
     }
 
@@ -46,7 +46,7 @@ $(function() {
         laddaBild(dataUri2);
     });    
     $('#setmaxzoomlevel').on('click', function() {
-        maxvalue = $('#maxzoomlevel').val();
+        var maxvalue = $('#maxzoomlevel').val();
         maxvalue = maxvalue.trim() ? maxvalue : null;
         openSeadragonViewer.viewport.maxZoomLevel = maxvalue;
     });    
@@ -55,9 +55,20 @@ $(function() {
             var zoom = openSeadragonViewer.viewport.getZoom(true);
             openSeadragonViewer.viewport.zoomTo(zoom * 2);
         }
-        catch(err) {
-            alert("Error", err);
+        catch (err) {
+            alert("getZoom error", err);
         }
-    });    
+    });
+    $('#runGetContext2d').on('click', function() {
+        var tid = new Date();
+        try {
+            var canvas = document.createElement( 'canvas' );
+            canvas.getContext('2d');
+            $('#meddelande').text("Canvas getContext('2d') funkar - " + tid.toLocaleTimeString());
+        }
+        catch (err) {
+            alert("Canvas getContext error - " + tid.toLocaleTimeString(), err);
+        }
+    });
 
 });
