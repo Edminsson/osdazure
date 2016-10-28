@@ -8,7 +8,7 @@ $(function() {
         crossOriginPolicy: 'anonymous'
     });
 
-    function laddaBild(infoUri) {
+    function laddaBildMedCors(infoUri) {
         $.ajax({
             url: infoUri,
             dataType: "json"
@@ -20,6 +20,20 @@ $(function() {
         }).fail(function(jqXHR, textStatus, errorThrown) {
             alert('Det uppstod ett fel' + textStatus + errorThrown);
         });
+    }
+
+    function laddaBildMedJsonp(infoUri) {
+        var settings = {
+            url: infoUri,
+            type: 'GET',
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            jsonpCallback: 'imageInfoCallback'
+        };
+        window.imageInfoCallback = function(json) {
+            laddaTile(json);
+        };
+        $.ajax(settings);
     }
 
     function laddaTile(info) {
@@ -37,7 +51,12 @@ $(function() {
 
     var dataUri1 = 'https://iiif.riksarkivet.se/arkis!C0000268_00001/info.json';
     var dataUri2 = 'https://iiif.riksarkivet.se/arkis!C0000268_00015/info.json';
-    laddaBild(dataUri1);    
+
+    if(Modernizr.cors) {
+        laddaBildMedCors(dataUri1);            
+    } else {
+        laddaBildMedJsonp(dataUri1);
+    }
 
     $('#laddabild1').on('click', function() {
         laddaBild(dataUri1);
