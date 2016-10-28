@@ -8,6 +8,14 @@ $(function() {
         crossOriginPolicy: 'anonymous'
     });
 
+    function laddaBild(infoUri) {
+        if(Modernizr.cors) {
+            laddaBildMedCors(infoUri);            
+        } else {
+            laddaBildMedJsonp(infoUri);
+        }
+    }
+
     function laddaBildMedCors(infoUri) {
         $.ajax({
             url: infoUri,
@@ -52,11 +60,7 @@ $(function() {
     var dataUri1 = 'https://iiif.riksarkivet.se/arkis!C0000268_00001/info.json';
     var dataUri2 = 'https://iiif.riksarkivet.se/arkis!C0000268_00015/info.json';
 
-    if(Modernizr.cors) {
-        laddaBildMedCors(dataUri1);            
-    } else {
-        laddaBildMedJsonp(dataUri1);
-    }
+    laddaBild(dataUri1);            
 
     $('#laddabild1').on('click', function() {
         laddaBild(dataUri1);
