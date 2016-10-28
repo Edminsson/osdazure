@@ -66,7 +66,11 @@ $(function() {
     });    
     $('#setmaxzoomlevel').on('click', function() {
         var maxvalue = $('#maxzoomlevel').val();
-        maxvalue = maxvalue.trim() ? maxvalue : null;
+        if(maxvalue.trim) {
+            maxvalue = maxvalue.trim() ? maxvalue : null;
+        } else {
+            maxvalue = maxvalue !== "" ? maxvalue : null;
+        }
         openSeadragonViewer.viewport.maxZoomLevel = maxvalue;
     });    
     $('#zoomin').on('click', function() {
