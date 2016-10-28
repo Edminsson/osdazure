@@ -104,5 +104,9 @@ $(function() {
             canvas.getContext('2d');            
         }
     });
+    $('#settileopacity').on('click', function() {
+        var tileopacity = $('#tileopacityTxt').val();
+        openSeadragonViewer.world.getItemAt(0).setOpacity(Number(tileopacity));
+    });    
 
 });
