@@ -58,7 +58,7 @@ $(function() {
     }
 
     var dataUri1 = 'https://iiif.riksarkivet.se/arkis!C0000268_00001/info.json';
-    var dataUri2 = 'https://iiif.riksarkivet.se/arkis!C0000268_00015/info.json';
+    var dataUri2 = 'https://iiif.riksarkivet.se/arkis!C0000268_00003/info.json';
 
     laddaBild(dataUri1);            
 
