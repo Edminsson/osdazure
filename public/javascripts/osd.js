@@ -17,8 +17,8 @@ $(function() {
             imageInfo.height = data.height;
             console.log('Bildinfo:(w, h)', imageInfo.width, imageInfo.height);
             laddaTile(data);
-        }).fail(function(error) {
-            alert('Det uppstod ett fel', error);
+        }).fail(function(jqXHR, textStatus, errorThrown) {
+            alert('Det uppstod ett fel' + textStatus + errorThrown);
         });
     }
 
