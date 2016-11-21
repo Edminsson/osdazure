@@ -17,10 +17,12 @@ $(function() {
     $('#clickToZoomBtn').on('click', function() {
         openSeadragonViewer.gestureSettingsMouse.clickToZoom = !openSeadragonViewer.gestureSettingsMouse.clickToZoom;
         showClickToZoomStatus();
+        showDblClickToZoomStatus();
     });  
 
     $('#dblClickToZoomBtn').on('click', function() {
         openSeadragonViewer.gestureSettingsMouse.dblClickToZoom = !openSeadragonViewer.gestureSettingsMouse.dblClickToZoom;
+        showClickToZoomStatus();
         showDblClickToZoomStatus();
     });  
 });
