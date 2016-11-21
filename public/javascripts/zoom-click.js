@@ -1,29 +1,29 @@
 function showClickToZoomStatus() {
     if(openSeadragonViewer.gestureSettingsMouse.clickToZoom) {
-        $("#clickToZoomLbl").text("clickToZoom är aktiverat");
+        $("#clickToZoomLbl").text("clickToZoom: PÅ");
     } else {
-        $("#clickToZoomLbl").text("clickToZoom är inaktiverat");            
+        $("#clickToZoomLbl").text("clickToZoom: AV");            
     }
 }
 function showDblClickToZoomStatus() {
     if(openSeadragonViewer.gestureSettingsMouse.dblClickToZoom) {
-        $("#dblClickToZoomLbl").text("dblClickToZoom är aktiverat");
+        $("#dblClickToZoomLbl").text("dblClickToZoom: PÅ");
     } else {
-        $("#dblClickToZoomLbl").text("dblClickToZoom är inaktiverat");            
+        $("#dblClickToZoomLbl").text("dblClickToZoom: AV");            
     }
 }
 function showTouchClickToZoomStatus() {
     if(openSeadragonViewer.gestureSettingsTouch.clickToZoom) {
-        $("#touchClickToZoomLbl").text("clickToZoom(touch) är aktiverat");
+        $("#touchClickToZoomLbl").text("clickToZoom(touch): PÅ");
     } else {
-        $("#touchClickToZoomLbl").text("clickToZoom(touch) är inaktiverat");            
+        $("#touchClickToZoomLbl").text("clickToZoom(touch): AV");            
     }
 }
 function showTouchDblClickToZoomStatus() {
     if(openSeadragonViewer.gestureSettingsTouch.dblClickToZoom) {
-        $("#touchdblClickToZoomLbl").text("dblClickToZoom(touch) är aktiverat");
+        $("#touchdblClickToZoomLbl").text("dblClickToZoom(touch): PÅ");
     } else {
-        $("#touchdblClickToZoomLbl").text("dblClickToZoom(touch) är inaktiverat");            
+        $("#touchdblClickToZoomLbl").text("dblClickToZoom(touch): AV");            
     }
 }
 function showZoomStatusForAll() {
