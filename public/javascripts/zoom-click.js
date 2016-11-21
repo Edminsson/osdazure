@@ -12,18 +12,46 @@ function showDblClickToZoomStatus() {
         $("#dblClickToZoomLbl").text("dblClickToZoom är inaktiverat");            
     }
 }
+function showTouchClickToZoomStatus() {
+    if(openSeadragonViewer.gestureSettingsTouch.clickToZoom) {
+        $("#touchclickToZoomBtn").text("clickToZoom(touch) är aktiverat");
+    } else {
+        $("#touchclickToZoomBtn").text("clickToZoom(touch) är inaktiverat");            
+    }
+}
+function showTouchDblClickToZoomStatus() {
+    if(openSeadragonViewer.gestureSettingsTouch.dblClickToZoom) {
+        $("#touchdblClickToZoomBtn").text("dblClickToZoom(touch) är aktiverat");
+    } else {
+        $("#touchdblClickToZoomBtn").text("dblClickToZoom(touch) är inaktiverat");            
+    }
+}
+function showStatusForAll() {
+        showClickToZoomStatus();
+        showDblClickToZoomStatus();
+        showTouchClickToZoomStatus();
+        showTouchDblClickToZoomStatus();
+}
 
 $(function() {
     $('#clickToZoomBtn').on('click', function() {
         openSeadragonViewer.gestureSettingsMouse.clickToZoom = !openSeadragonViewer.gestureSettingsMouse.clickToZoom;
-        showClickToZoomStatus();
-        showDblClickToZoomStatus();
+        showStatusForAll();
     });  
 
     $('#dblClickToZoomBtn').on('click', function() {
         openSeadragonViewer.gestureSettingsMouse.dblClickToZoom = !openSeadragonViewer.gestureSettingsMouse.dblClickToZoom;
-        showClickToZoomStatus();
-        showDblClickToZoomStatus();
+        showStatusForAll();
+    });  
+
+    $('#touchclickToZoomBtn').on('click', function() {
+        openSeadragonViewer.gestureSettingsTouch.clickToZoom = !openSeadragonViewer.gestureSettingsTouch.clickToZoom;
+        showStatusForAll();
+    });  
+
+    $('#touchdblClickToZoomBtn').on('click', function() {
+        openSeadragonViewer.gestureSettingsTouch.dblClickToZoom = !openSeadragonViewer.gestureSettingsTouch.dblClickToZoom;
+        showStatusForAll();
     });  
 });
 
