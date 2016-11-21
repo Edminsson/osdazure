@@ -14,9 +14,9 @@ function showDblClickToZoomStatus() {
 }
 function showTouchClickToZoomStatus() {
     if(openSeadragonViewer.gestureSettingsTouch.clickToZoom) {
-        $("#touchclickToZoomLbl").text("clickToZoom(touch) är aktiverat");
+        $("#touchClickToZoomLbl").text("clickToZoom(touch) är aktiverat");
     } else {
-        $("#touchclickToZoomLbl").text("clickToZoom(touch) är inaktiverat");            
+        $("#touchClickToZoomLbl").text("clickToZoom(touch) är inaktiverat");            
     }
 }
 function showTouchDblClickToZoomStatus() {
