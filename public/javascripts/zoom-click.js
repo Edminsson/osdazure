@@ -12,3 +12,13 @@ function showDblClickToZoomStatus() {
         $("#dblClickToZoomLbl").text("dblClickToZoom är inaktiverat");            
     }
 }
+
+$('#clickToZoomBtn').on('click', function() {
+    openSeadragonViewer.gestureSettingsMouse.clickToZoom = !openSeadragonViewer.gestureSettingsMouse.clickToZoom;
+    showClickToZoomStatus();
+});  
+
+$('#dblClickToZoomBtn').on('click', function() {
+    openSeadragonViewer.gestureSettingsMouse.dblClickToZoom = !openSeadragonViewer.gestureSettingsMouse.dblClickToZoom;
+    showDblClickToZoomStatus();
+});  

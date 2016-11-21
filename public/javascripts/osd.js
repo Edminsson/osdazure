@@ -16,7 +16,7 @@ $(function() {
         }
         //Funktioner som finns i zoom-click.js
         showClickToZoomStatus();
-        showClickToZoomStatus();       
+        showDblClickToZoomStatus();       
     }
 
     function laddaBildMedCors(infoUri) {
