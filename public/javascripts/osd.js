@@ -14,9 +14,8 @@ $(function() {
         } else {
             laddaBildMedJsonp(infoUri);
         }
-        //Funktioner som finns i zoom-click.js
-        showClickToZoomStatus();
-        showDblClickToZoomStatus();       
+        //Funktion som finns i zoom-click.js
+        showZoomStatusForAll();
     }
 
     function laddaBildMedCors(infoUri) {

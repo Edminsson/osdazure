@@ -14,19 +14,19 @@ function showDblClickToZoomStatus() {
 }
 function showTouchClickToZoomStatus() {
     if(openSeadragonViewer.gestureSettingsTouch.clickToZoom) {
-        $("#touchclickToZoomBtn").text("clickToZoom(touch) är aktiverat");
+        $("#touchclickToZoomLbl").text("clickToZoom(touch) är aktiverat");
     } else {
-        $("#touchclickToZoomBtn").text("clickToZoom(touch) är inaktiverat");            
+        $("#touchclickToZoomLbl").text("clickToZoom(touch) är inaktiverat");            
     }
 }
 function showTouchDblClickToZoomStatus() {
     if(openSeadragonViewer.gestureSettingsTouch.dblClickToZoom) {
-        $("#touchdblClickToZoomBtn").text("dblClickToZoom(touch) är aktiverat");
+        $("#touchdblClickToZoomLbl").text("dblClickToZoom(touch) är aktiverat");
     } else {
-        $("#touchdblClickToZoomBtn").text("dblClickToZoom(touch) är inaktiverat");            
+        $("#touchdblClickToZoomLbl").text("dblClickToZoom(touch) är inaktiverat");            
     }
 }
-function showStatusForAll() {
+function showZoomStatusForAll() {
         showClickToZoomStatus();
         showDblClickToZoomStatus();
         showTouchClickToZoomStatus();
@@ -36,22 +36,22 @@ function showStatusForAll() {
 $(function() {
     $('#clickToZoomBtn').on('click', function() {
         openSeadragonViewer.gestureSettingsMouse.clickToZoom = !openSeadragonViewer.gestureSettingsMouse.clickToZoom;
-        showStatusForAll();
+        showZoomStatusForAll();
     });  
 
     $('#dblClickToZoomBtn').on('click', function() {
         openSeadragonViewer.gestureSettingsMouse.dblClickToZoom = !openSeadragonViewer.gestureSettingsMouse.dblClickToZoom;
-        showStatusForAll();
+        showZoomStatusForAll();
     });  
 
     $('#touchclickToZoomBtn').on('click', function() {
         openSeadragonViewer.gestureSettingsTouch.clickToZoom = !openSeadragonViewer.gestureSettingsTouch.clickToZoom;
-        showStatusForAll();
+        showZoomStatusForAll();
     });  
 
     $('#touchdblClickToZoomBtn').on('click', function() {
         openSeadragonViewer.gestureSettingsTouch.dblClickToZoom = !openSeadragonViewer.gestureSettingsTouch.dblClickToZoom;
-        showStatusForAll();
+        showZoomStatusForAll();
     });  
 });
 
